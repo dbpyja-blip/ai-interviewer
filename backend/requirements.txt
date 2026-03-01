@@ -1,0 +1,45 @@
+# Core LiveKit Agents with OpenAI plugin
+livekit-agents[openai,silero]
+livekit-plugins-noise-cancellation
+
+# FastAPI for API server
+fastapi
+uvicorn[standard]
+openai>=1.30.0
+
+# Environment variable management
+python-dotenv
+
+# Additional dependencies
+livekit
+livekit-api
+
+# Optional but recommended for better logging
+coloredlogs
+
+# Vision analysis dependencies - NO LONGER USED FOR AI PROCESSING (removed to save costs)
+# These were previously used for sending images to OpenAI Vision API
+# opencv-python - REMOVED
+# numpy - REMOVED (transformers has it as dependency)
+
+# PROCTORING with FREE Local Hugging Face Model (NO API COSTS!)
+transformers>=4.30.0
+torch>=2.0.0
+pillow>=9.0.0
+timm>=0.9.0
+# OCR for extracting code text (requires `tesseract-ocr` binary on the host)
+pytesseract>=0.3.10
+# timm = PyTorch Image Models (required by Conditional DETR backbone)
+# This uses microsoft/conditional-detr-resnet-50 for object detection
+# Detects: person, cell phone, laptop, and other COCO objects
+
+# HTTP client for agent API calls
+httpx
+
+# FastAPI file upload support
+python-multipart
+
+# Note: FFmpeg must be installed separately on the system
+# Windows: Download from https://ffmpeg.org/download.html
+# Linux: sudo apt-get install ffmpeg
+# macOS: brew install ffmpeg
